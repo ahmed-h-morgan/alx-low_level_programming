@@ -1,3 +1,4 @@
+julien@ubuntu:~/c/0x00$ cat main.c 
 #include <stdio.h>
 
 /**
@@ -22,3 +23,4 @@ int main(void)
 {
  return (0);
 }
+julien@ubuntu:~/c/0x00$ 
