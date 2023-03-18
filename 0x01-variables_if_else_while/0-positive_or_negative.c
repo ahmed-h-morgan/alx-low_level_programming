@@ -8,7 +8,8 @@
 
 /*
  * betty style doc for function main goes there
- * main - check positve or negative number
+ * Main function: checks positve or negative number
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
