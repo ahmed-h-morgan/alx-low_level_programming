@@ -7,7 +7,6 @@
  */
 
 /*
- * betty style doc for function main goes there
  * Main function: checks positve or negative number
  * Return: Always 0 (Success)
  */
