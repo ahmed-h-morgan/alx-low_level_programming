@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char start, end;
+	int start, end;
 
 	start = 'a';
 	end = 'z';
