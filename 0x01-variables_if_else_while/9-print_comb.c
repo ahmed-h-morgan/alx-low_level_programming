@@ -17,7 +17,7 @@ int main(void)
 		else
 		{
 			putchar('0' + x);
-			putchar(',' + ' ');
+			putchar(',');
 		}
 	}
 	putchar('\n');
