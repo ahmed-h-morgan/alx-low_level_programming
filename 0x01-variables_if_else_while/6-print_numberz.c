@@ -10,10 +10,6 @@ int main(void)
 
 	for (x = 0; x < 10; x++)
 	{
-		if (x == 10)
-		{
-			putchar('\n');
-		}
 		putchar(x);
 	}
 	return (0);
