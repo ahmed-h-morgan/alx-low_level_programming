@@ -7,14 +7,9 @@
  */
 int main(void)
 {
-	int start, end;
-
-	start = 'a';
-	end = 'z';
-	while (start <= 'a' && end <= 'z')
+	for (int x = 'a'; x <= 'z'; x++)
 	{
-		putchar(start);
-		start++;
+		putchar(x);
 	}
 	return (0);
 }
