@@ -2,12 +2,12 @@
 /*   */
 int _islower(int c)
 {
-	if (c == 99)
+	if (c >= 97 && c <= 122)
 	{
-		return (1 - 0);
+		return (1);
 	}
 	else
 	{
-		return (0 - 0);
+		return (0);
 	}
 }
