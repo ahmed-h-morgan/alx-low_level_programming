@@ -5,11 +5,8 @@
  * Parameter (i) -  is a tested number
  * Return: 0
  */
-
 void positive_or_negative(int i)
 {
-	int i;
-
 	srand(time(0));
 	i = rand() - RAND_MAX / 2;
 	/* your code goes there */
