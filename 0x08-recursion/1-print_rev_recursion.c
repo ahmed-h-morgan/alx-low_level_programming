@@ -13,14 +13,14 @@ void _print_rev_recursion(char *s)
 
 	i = 0;
 	j = 0;
-	if (j== 0)
+	if (j == 0)
 	{
-		string_end(i, j, s);
+		j = string_end(i, j, s);
 	}
 	else
 		if (i >= 0 && j > 0)
 		{
-			putchar(*s + i);
+			_putchar(*s + i);
 			i--;
 			_print_rev_recursion(s - i);
 		}
@@ -29,15 +29,16 @@ int string_end(int i, int j, char *s)
 {
 	if (*(s + i) != '\0')
 	{
-		printf("%c \n", *s);
+		/*printf("%c \n", *s);*/
 		i++;
 		string_end(i, j, s);
 	}
 	else
 	{
 		j += 1;
-		return (i, j);
+		/*return (i j);*/
 	}
+	return (j);
 	_print_rev_recursion(s + i);
 }
 
