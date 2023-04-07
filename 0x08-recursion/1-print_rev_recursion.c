@@ -1,15 +1,12 @@
 #include "main.h"
-
 /**
  * _print_rev_recursion - prints a string in reverse
  * @s: the string
+ * @i: start
+ * @j: end if str
  * Return: printed string
 */
-/**
- * string_end - the end point of string
- * @i:the len of string
- * @j: end point of string
-*/
+
 int string_end(int i, int j, char *s);
 void _print_rev_recursion(char *s)
 {
@@ -29,6 +26,14 @@ void _print_rev_recursion(char *s)
 			_print_rev_recursion(s - i);
 		}
 }
+/**
+ * string_end - the end of str
+ * @i: the rev starting point
+ * @j: the str end point
+ * @s: the string
+ * Return: Return(0)
+ *
+*/
 int string_end(int i, int j, char *s)
 {
 	if (*(s + i) != '\0')
