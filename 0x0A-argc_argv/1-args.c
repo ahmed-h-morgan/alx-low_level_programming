@@ -6,7 +6,7 @@
  * @argv: the string
  * Return: (0) is successful
 */
-int main(int argc, __attribute__((unused)) char *argv[])
+int main(int argc, char __attribute__((unused)) *argv[])
 {
 	int i, num;
 
