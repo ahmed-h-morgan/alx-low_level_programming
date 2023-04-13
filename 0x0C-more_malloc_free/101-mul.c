@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "main.h"
 
 /**
  * print_error_and_exit - check error
  *
 */
+int _putchar(char c);
 
 void print_error_and_exit(void)
 {
@@ -23,7 +25,7 @@ void check_valid_number(char *num)
 {
 	int i;
 
-	for (i = 0; num[i] != '\0'; i++)
+	for (i = 2; num[i] != '\0'; i++)
 	{
 		if (!isdigit(num[i]))
 		{
@@ -47,7 +49,7 @@ void multiply(char *num1, char *num2)
 	if (result == NULL)
 	{
 		printf("Error: Memory allocation failed\n");
-		exit(1)
+		exit(1);
 	}
 	for (i = len1 - 1; i >= 0; i--)
 	{
