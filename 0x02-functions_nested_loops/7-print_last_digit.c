@@ -14,10 +14,7 @@ int print_last_digit(int i)
 	{
 		i *= -1;
 	}
-	else if (i == INT_MIN)
-	{
-		i = 8;
-	}
+
 	d = i % 10;
 	_putchar(d + '0');
 	return (d);
