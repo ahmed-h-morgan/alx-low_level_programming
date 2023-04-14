@@ -1,13 +1,17 @@
 #include "main.h"
-/*PRINT_ALPHABET - prints alphabet cahracters.*/
-void print_alphabet(void)
-/*Print_alpahnet prints alpabet characters.*/
-{
-	int x;
 
-	for (x = 'a'; x <= 'z'; x++)
+/**
+ * print_alphabet - print alphabet a-z
+ * Return: 0 successful
+*/
+
+void print_alphabet(void)
+{
+	int i;
+
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		_putchar(x);
+		_putchar(i);
 	}
 	_putchar('\n');
 }
