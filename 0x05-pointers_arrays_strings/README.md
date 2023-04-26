@@ -1,1 +1,1 @@
-My first pointer dayy
+This is different solutions
