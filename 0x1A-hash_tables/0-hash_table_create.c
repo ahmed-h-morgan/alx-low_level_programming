@@ -32,7 +32,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	table->size = size;
-	table->array = (hash_node_t **item) calloc(table->size, sizeof(hash_node_t));
+	table->array = (hash_node_t**) calloc(table->size, sizeof(hash_node_t));
 
 	for(i = 0; i < size; i++)
 	{
