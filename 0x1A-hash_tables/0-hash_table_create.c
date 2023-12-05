@@ -7,7 +7,8 @@
  *
  * 
  * */
-hash_table_t *hash_table_create(unsigned long int size)
+
+hash_node_t *create_item(char *key, char *value)
 {
 	hash_node_t *item = malloc(sizeof(hash_node_t));
 	if(!item)
@@ -18,13 +19,26 @@ hash_table_t *hash_table_create(unsigned long int size)
 	item->value = strdup(value);
 	item->next = NULL;
 
+	return (item);
+}
+
+hash_table_t *hash_table_create(unsigned long int size)
+{
+	unsigned long int i;
+
 	hash_table_t *table = malloc(sizeof(hash_table_t));
 	if (!table)
 	{
 		return (NULL);
 	}
-	unsigned long int table->size = size;
-	
+	table->size = size;
+	table->array = (hash_node_t **item) calloc(table->size, sizeof(hash_node_t));
 
+	for(i = 0; i < size; i++)
+	{
+		table->array[i] = NULL;
+	}
+
+	return(table);
 
 }
