@@ -16,13 +16,13 @@ hash_node_t *create_item(char *key, char *value)
 		return (NULL);
 	}
 	item->key = strdup(key);
-	item->value = strcpy(item->value, value);
+	item->value = strdup(value);
 	item->next = NULL;
 
 
-	/*printf("Memory used by hash_node_t structure: %lu bytes\n", sizeof(hash_node_t));*/
-	/*printf("Memory used by key string: %lu bytes\n", strlen(item->key) + 1);*/
-	/*printf("Memory used by value string: %lu bytes\n", strlen(item->value) + 1);*/
+	printf("Memory used by hash_node_t structure: %lu bytes\n", sizeof(hash_node_t));
+	printf("Memory used by key string: %lu bytes\n", strlen(item->key) + 1);
+	printf("Memory used by value string: %lu bytes\n", strlen(item->value) + 1);
 
 	return (item);
 }
@@ -53,7 +53,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/*(*create_item)(char *, char *)=create_item;*/
 
-	/*printf("Memory used by array of hash_node_t pointers: %lu bytes\n", size * sizeof(hash_node_t *));*/
+	printf("Memory used by array of hash_node_t pointers: %lu bytes\n", size * sizeof(hash_node_t *));
 
 
 	return (table);
