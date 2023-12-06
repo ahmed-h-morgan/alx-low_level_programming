@@ -55,6 +55,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/*printf("Memory used by array of hash_node_t pointers: %lu bytes\n", size * sizeof(hash_node_t *));*/
 
+
 	return (table);
 
 }
