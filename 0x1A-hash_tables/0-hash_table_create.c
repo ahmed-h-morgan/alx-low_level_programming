@@ -1,19 +1,16 @@
 #include "hash_tables.h"
 
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
+ * hash_table_create - create the hash-table
+ * @size: the size of the table
+ * Return: a pointer to the newly created hash table
 */
-
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	unsigned long int i;
-
 	hash_table_t *table = malloc(sizeof(hash_table_t));
+
 	if (table == NULL)
 	{
 		return (NULL);
@@ -25,7 +22,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(table);
 		return (NULL);
 	}
-	for(i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		table->array[i] = NULL;
 	}
