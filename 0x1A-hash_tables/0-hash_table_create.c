@@ -50,10 +50,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/*table->array = array;*/
 	/*table->array = (hash_node_t **) malloc(size * sizeof(hash_node_t));*/
 	/*table->array = (hash_node_t **) calloc(table->size, sizeof(hash_node_t));*/
-	for (i = 0; i < size; i++)
+	/*for (i = 0; i < size; i++)
 	{
 		table->array[i] = NULL;
-	}
+	}*/
 
 	/*(*create_item)(char *, char *)=create_item;*/
 
