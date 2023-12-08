@@ -7,7 +7,7 @@
  * Return: a pointer to thenext node
 */
 
-hash_node_t *create_item(char *key, char *value)
+/**hash_node_t *create_item(char *key, char *value)
 {
 	hash_node_t *item = (hash_node_t *)malloc(sizeof(hash_node_t));
 
@@ -20,12 +20,12 @@ hash_node_t *create_item(char *key, char *value)
 	item->next = NULL;
 
 
-	/*printf("Memory used by hash_node_t structure: %lu bytes\n", sizeof(hash_node_t));*/
-	/*printf("Memory used by key string: %lu bytes\n", strlen(item->key) + 1);*/
-	/*printf("Memory used by value string: %lu bytes\n", strlen(item->value) + 1);*/
+	printf("Memory used by hash_node_t structure: %lu bytes\n", sizeof(hash_node_t));
+	printf("Memory used by key string: %lu bytes\n", strlen(item->key) + 1);
+	printf("Memory used by value string: %lu bytes\n", strlen(item->value) + 1);
 
 	return (item);
-}
+}*/
 
 /**
  * hash_table_create - cteate the hash table
@@ -35,12 +35,12 @@ hash_node_t *create_item(char *key, char *value)
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	unsigned long int i;
+	/*unsigned long int i;*/
 	/*hash_node_t *array[size];*/
 	hash_table_t *table = (hash_table_t *)malloc(sizeof(hash_table_t));
 	/*hash_node_t **array = malloc(size * sizeof(hash_node_t));*/
 
-	printf("Memory used by hash_table_t structure: %lu bytes\n", sizeof(hash_table_t));
+	/*printf("Memory used by hash_table_t structure: %lu bytes\n", sizeof(hash_table_t));*/
 	if (!table)
 	{
 		return (NULL);
@@ -49,8 +49,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	table->size = size;
 	/*table->array = array;*/
 	/*table->array = (hash_node_t **) malloc(size * sizeof(hash_node_t));*/
-	/*table->array = (hash_node_t **) calloc(table->size, sizeof(hash_node_t));*/
-	/*for (i = 0; i < size; i++)
+	/*table->array = (hash_node_t **) calloc(table->size, sizeof(hash_node_t));
+	for (i = 0; i < size; i++)
 	{
 		table->array[i] = NULL;
 	}*/
