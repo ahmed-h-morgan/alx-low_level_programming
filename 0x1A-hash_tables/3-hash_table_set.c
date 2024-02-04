@@ -44,7 +44,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	current_node = ht->array[index];
 
-	if (current_node->key == NULL)
+	if (ht == NULL || ht->size == 0 || ht->array == NULL
+		|| key == NULL || value == NULL)
 	{
 		return (0);
 	}
