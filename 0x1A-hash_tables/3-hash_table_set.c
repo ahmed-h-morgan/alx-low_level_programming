@@ -50,7 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			/*Update the value of the existing node*/
 			free(current_node->value); /*Free the old value*/
 			 /*Duplicate the new value below*/
-			current_node->value = strdup(new_node->value);
+			current_node->value = strdup(value);
 			if (!current_node)
 			{
 				return (0);
@@ -61,7 +61,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	/*If we reached the end of the list without finding a match,*/
 	/*add the new node to the list*/
-	hash_node_t *new_node = create_node(key, value);
+	new_node = create_node(key, value);
 	if (!new_node)
 	{
 		return (0);
