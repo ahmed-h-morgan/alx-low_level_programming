@@ -57,7 +57,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp = strdup(value);
 			if (!temp)
 			{
-				return (0);
+				return (NULL);
 			}
 			/*Update the value of the existing node*/
 			free(current_node->value); /*Free the old value*/
@@ -72,7 +72,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node = create_node(key, value);
 	if (!new_node)
 	{
-		return (0);
+		return (NULL);
 	}
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
