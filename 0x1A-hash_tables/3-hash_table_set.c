@@ -37,42 +37,36 @@ hash_node_t *create_node(const char *key, const char *value)
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_table_t *table = ht;
-	unsigned long int index = hash_djb2((const unsigned char *)key) % table->size;
-	hash_node_t *new_node = create_node(key, value);
+	hash_node_t *current_node;
+	unsigned long int index = key_index((const unsigned char *)key, ht->size);
+	hash_node_t *new_node;
 
-	if (!index)
+	current_node = ht->array[index];
+
+	while (current_node != NULL)
 	{
-		return (0);
+		if (strcmp(current_node->key, key) == 0)
+		{
+			/*Update the value of the existing node*/
+			free(current_node->value); /*Free the old value*/
+			 /*Duplicate the new value below*/
+			current_node->value = strdup(new_node->value);
+			if (!current_node)
+			{
+				return (0);
+			}
+			return (1); /*Indicate success*/
+		}
+		current_node = current_node->next;
 	}
+	/*If we reached the end of the list without finding a match,*/
+	/*add the new node to the list*/
+	hash_node_t *new_node = create_node(key, value);
 	if (!new_node)
 	{
 		return (0);
 	}
-	while (table->array[index] != NULL)
-	{
-		if (strcmp(table->array[index]->key, new_node->key) == 0)
-		{
-			/*Update the value of the existing node*/
-			free(table->array[index]->value); /*Free the old value*/
-			 /*Duplicate the new value below*/
-			table->array[index]->value = strdup(new_node->value);
-			return (1); /*Indicate success*/
-		}
-		if (table->array[index]->next != NULL)
-		{
-			/*Move to the next node in the list*/
-			table->array[index] = table->array[index]->next;
-		}
-		else
-		{
-			/*Reached the end of the list without finding a match*/
-			break;
-		}
-	}
-	/*If we reached the end of the list without finding a match,*/
-	/*add the new node to the list*/
-	new_node->next = table->array[index];
-	table->array[index] = new_node;
+	new_node->next = current_node;
+	current_node = new_node;
 return (1); /*Indicate success*/
 }

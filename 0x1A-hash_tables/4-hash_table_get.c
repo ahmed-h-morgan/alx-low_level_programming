@@ -11,10 +11,13 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index = hash_djb2((const unsigned char *)key) % ht->size;
+	hash_node_t *current_node = ht->array[index];
 
-	if (ht->array[index])
+	printf("%lu \n", index);
+
+	if (current_node)
 	{
-		return (ht->array[index]->value);
+		return (current_node->value);
 	}
 	else
 	{
