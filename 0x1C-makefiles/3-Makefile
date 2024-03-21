@@ -10,7 +10,7 @@ all: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) $(SRC) $(OBJ) temp
+	$(RM) *~ *.swp *.swo *.o $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
