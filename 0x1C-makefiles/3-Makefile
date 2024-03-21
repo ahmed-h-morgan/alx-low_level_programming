@@ -4,9 +4,19 @@ OBJ := $(SRC:.c=.o)
 NAME := school
 RM := rm -f
 
+.PHONY: all clean oclean fclean re
 
 all: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) $(SRC) $(OBJ) $(NAME)
+	$(RM) $(SRC) $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) $(SRC) $(NAME) $(OBJ)
+
+re:
+	`make -f`
