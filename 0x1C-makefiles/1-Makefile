@@ -1,0 +1,5 @@
+CC = gcc 
+SRC = $(shell echo *.c)
+
+all:
+	$(CC) $(SRC) -o school
