@@ -10,13 +10,13 @@ all: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) $(SRC) $(NAME)
+	$(RM) $(SRC) $(NAME) temp
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean:
-	$(RM) $(SRC) $(NAME) $(OBJ)
+	$(RM) $(SRC) $(NAME) $(OBJ) temp
 
 re:
 	`make -f`
