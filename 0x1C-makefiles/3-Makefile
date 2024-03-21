@@ -10,7 +10,7 @@ all: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) $(SRC) $(NAME) temp
+	$(RM) $(SRC) $(OBJ) temp
 
 oclean:
 	$(RM) $(OBJ)
