@@ -15,8 +15,7 @@ clean:
 oclean:
 	$(RM) $(OBJ)
 
-fclean:
-	$(RM) $(SRC) $(NAME) $(OBJ) temp
+fclean: clean oclean
 
 re:
 	`make -f`
