@@ -19,17 +19,14 @@ $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
 # Compile .c files to .o files with header dependency
-main.o: main.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-school.o: school.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
+main.o: m.h
+school.o: m.h
 
 # Clean temporary files and executable
 clean:
 	$(RM) *~ $(NAME)
 
-# Clean object files
+# Clean object files  
 oclean:
 	$(RM) $(OBJ)
 
