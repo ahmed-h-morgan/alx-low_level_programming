@@ -18,9 +18,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
-# Compile .c files to .o files with header dependency
-main.o: m.h
-school.o: m.h
+# Header file dependency (implicit rule will handle compilation)
+$(OBJ): m.h
 
 # Clean temporary files and executable
 clean:
