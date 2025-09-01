@@ -18,14 +18,15 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
-# Header file dependency (implicit rule will handle compilation)
-$(OBJ): m.h
+# Individual object file rules with header dependency
+main.o: main.c m.h
+school.o: school.c m.h
 
 # Clean temporary files and executable
 clean:
 	$(RM) *~ $(NAME)
 
-# Clean object files  
+# Clean object files
 oclean:
 	$(RM) $(OBJ)
 
