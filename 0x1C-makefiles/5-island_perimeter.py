@@ -12,10 +12,12 @@ def island_perimeter(grid):
     - 0 represents water
     - 1 represents land
 
-    The island is assumed to have no lakes and is completely surrounded by water.
+    The island is assumed to have no lakes and is completely surrounded
+      by water.
 
     Args:
-        grid (list of list of int): The grid representing the island and water
+        grid (list of list of int): The grid representing the 
+        island and water
 
     Returns:
         int: The perimeter of the island
