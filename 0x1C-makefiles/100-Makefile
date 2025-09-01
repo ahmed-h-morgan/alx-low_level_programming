@@ -16,7 +16,7 @@ all: $(NAME)
 
 # Build executable
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(CC) $^ -o $@
 
 # Compile .c files to .o files with header dependency
 main.o: main.c m.h
