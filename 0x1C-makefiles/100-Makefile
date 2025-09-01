@@ -1,40 +1,26 @@
-# Compiler and flags
+# 100-Makefile
 CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-# Executable name
-NAME = school
-
-# Source files
-SRC = main.c school.c
-
-# Object files
-OBJ = $(SRC:.c=.o)
-
-# Default target
 all: $(NAME)
 
-# Build executable
 $(NAME): $(OBJ)
-	$(CC) $^ -o $@
+	$(CC) -o $@ $^
 
-# Individual object file rules with header dependency
-main.o: main.c m.h
-school.o: school.c m.h
+%.o: %.c m.h
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-# Clean temporary files and executable
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) *~ \#*\# .\#* vgcore.* core $(NAME)
 
-# Clean object files
 oclean:
 	$(RM) $(OBJ)
 
-# Clean everything
 fclean: clean oclean
 
-# Rebuild everything
 re: fclean all
 
-# Prevent rules from failing
 .PHONY: all clean oclean fclean re
