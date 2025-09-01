@@ -1,23 +1,43 @@
+# Compiler and flags
 CC = gcc
-SRC = school.c main.c
-OBJ = $(SRC:.c=.o)
-NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+# Executable name
+NAME = school
 
-.PHONY: all clean oclean fclean re
+# Source files
+SRC = main.c school.c
 
+# Object files
+OBJ = $(SRC:.c=.o)
 
-all: $(OBJ)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+# Default target
+all: $(NAME)
 
+# Build executable
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $@
+
+# Compile .c files to .o files with header dependency
+main.o: main.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+school.o: school.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean temporary files and executable
 clean:
-	$(RM) *~ *.swp *.swo *.o $(NAME)
+	$(RM) *~ $(NAME)
 
+# Clean object files
 oclean:
 	$(RM) $(OBJ)
 
+# Clean everything
 fclean: clean oclean
 
+# Rebuild everything
 re: fclean all
+
+# Prevent rules from failing
+.PHONY: all clean oclean fclean re
