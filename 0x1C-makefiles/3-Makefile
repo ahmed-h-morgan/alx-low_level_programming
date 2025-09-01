@@ -1,20 +1,42 @@
+# Compiler
 CC = gcc
-SRC = school.c main.c
-OBJ = $(SRC:.c=.o)
+
+# Name of the executable
 NAME = school
+
+# Source files (automatically finds all .c files)
+SRC = $(wildcard *.c)
+
+# Object files (replaces .c with .o)
+OBJ = $(SRC:.c=.o)
+
+# Remove command
 RM = rm -f
 
-.PHONY: all clean oclean fclean re
+# Default target
+all: $(NAME)
 
-all: $(OBJ)
-	$(CC) $(SRC) -o $(NAME)
+# Build executable from object files
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
+# Pattern rule to compile .c files to .o files
+%.o: %.c
+	$(CC) -c $< -o $@
+
+# Clean temporary files and executable
 clean:
-	$(RM) *~ *.swp *.swo *.o $(NAME)
+	$(RM) *~ $(NAME)
 
+# Clean object files
 oclean:
 	$(RM) $(OBJ)
 
+# Clean everything
 fclean: clean oclean
 
+# Rebuild everything
 re: fclean all
+
+# Prevent rules from failing
+.PHONY: all clean oclean fclean re
