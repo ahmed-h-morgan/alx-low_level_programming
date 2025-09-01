@@ -4,8 +4,8 @@ CC = gcc
 # Name of the executable
 NAME = school
 
-# Source files (automatically finds all .c files)
-SRC = $(wildcard *.c)
+# Source files (manually listed)
+SRC = main.c school.c
 
 # Object files (replaces .c with .o)
 OBJ = $(SRC:.c=.o)
