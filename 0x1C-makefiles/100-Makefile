@@ -1,6 +1,6 @@
 # 100-Makefile
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
@@ -8,10 +8,13 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ $(CFLAGS)
 
-%.o: %.c m.h
-	$(CC) $(CFLAGS) -c -o $@ $<
+main.o: main.c m.h
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+school.o: school.c m.h
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
 	$(RM) *~ \#*\# .\#* vgcore.* core $(NAME)
